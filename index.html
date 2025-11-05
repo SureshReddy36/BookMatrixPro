@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMatrixPro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="app-header">
+        <div class="brand">
+            <div class="logo" aria-hidden="true">📚</div>
+            <h1>BookMatrixPro Management</h1>
+        </div>
+        <div class="header-actions">
+            <a href="login.html" class="btn ghost" title="Login">Login</a>
+            <label for="themeSelect" class="visually-hidden">Theme</label>
+            <select id="themeSelect" class="theme-select" title="Select theme">
+                <optgroup label="Light Themes">
+                    <option value="light-mint-cream">Mint Cream 🍃</option>
+                    <option value="light-warm-beige">Warm Beige ☕</option>
+                    <option value="light-soft-teal">Soft Teal 💧</option>
+                    <option value="light-lavender-mist">Lavender Mist 🌸</option>
+                    <option value="light-sky-breeze">Sky Breeze 🌤️</option>
+                    <option value="light-blush-rose">Blush Rose 🌷</option>
+                    <option value="light-ivory-glow">Ivory Glow 🤍</option>
+                    <option value="light-ocean-pearl">Ocean Pearl 🐚</option>
+                    <option value="light-lemon-frost">Lemon Frost 🍋</option>
+                    <option value="light-cloud-drift">Cloud Drift ☁️</option>
+                    <option value="light-frost-mint">Frost Mint ❄️</option>
+                    <option value="light-peach-glow">Peach Glow 🍑</option>
+                    <option value="light-sand-dune">Sand Dune 🏜️</option>
+                    <option value="light-snow-lilac">Snow Lilac ❄️🌸</option>
+                </optgroup>
+                <optgroup label="Dark Themes">
+                    <option value="dark-emerald-night">Emerald Night 🌿</option>
+                    <option value="dark-rust-orange">Rust Orange 🧡</option>
+                    <option value="dark-charcoal-violet">Charcoal Violet 🟣</option>
+                    <option value="dark-deep-plum">Deep Plum 🟣</option>
+                    <option value="dark-midnight-blue">Midnight Blue 🌌</option>
+                    <option value="dark-wine-red">Wine Red 🍷</option>
+                    <option value="dark-onyx-shadow">Onyx Shadow ⚫</option>
+                    <option value="dark-deep-sea">Deep Sea 🌊</option>
+                    <option value="dark-amber-gold">Amber Gold 🟡</option>
+                    <option value="dark-storm-grey">Storm Grey 🌪️</option>
+                    <option value="dark-forest-pine">Forest Pine 🌲</option>
+                    <option value="dark-mocha-brown">Mocha Brown ☕</option>
+                    <option value="dark-copper-dust">Copper Dust 🧱</option>
+                    <option value="dark-twilight-purple">Twilight Purple 🌒</option>
+                </optgroup>
+            </select>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="tabs card slide-up" role="tablist" aria-label="Role tabs">
+            <a href="user.html" class="tab">User View</a>
+            <a href="admin.html" class="tab">Admin View</a>
+        </nav>
+
+        <section class="hero fade-in">
+            <h2>Welcome to your BookMatrixPro</h2>
+            <p>Search, sort, and manage your collection with ease.</p>
+        </section>
+
+        <section class="controls card slide-up" data-visible="both">
+            <div class="row">
+                <div class="control search">
+                    <label for="search">Search</label>
+                    <div class="search-wrap">
+                        <input id="search" type="text" placeholder="Search by title, author, or genre..." autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-owns="searchResults">
+                        <div id="searchResults" class="search-suggestions" role="listbox" aria-label="Search suggestions"></div>
+                    </div>
+                </div>
+                <div class="control">
+                    <label for="sortBy">Sort by</label>
+                    <select id="sortBy">
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="year">Year</option>
+                        <option value="availability">Availability</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label for="filterGenre">Genre</label>
+                    <select id="filterGenre">
+                        <option value="all">All</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label for="filterAvailability">Availability</label>
+                    <select id="filterAvailability">
+                        <option value="all">All</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="card slide-up" data-visible="admin">
+            <h3>Add a new book</h3>
+            <form id="addBookForm" class="grid-form" autocomplete="off">
+                <div class="field">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text" placeholder="The Great Gatsby" required>
+                </div>
+                <div class="field">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" type="text" placeholder="F. Scott Fitzgerald" required>
+                </div>
+                <div class="field">
+                    <label for="genre">Genre</label>
+                    <input id="genre" name="genre" type="text" placeholder="Classic" required>
+                </div>
+                <div class="field">
+                    <label for="year">Year</label>
+                    <input id="year" name="year" type="number" min="0" max="9999" placeholder="1925" required>
+                </div>
+                <div class="field">
+                    <label for="quantity">Quantity</label>
+                    <input id="quantity" name="quantity" type="number" min="0" max="9999" placeholder="3" required>
+                </div>
+                <div class="actions">
+                    <button class="btn primary" type="submit">Add Book</button>
+                    <button class="btn ghost" type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <div class="list-header">
+                <h3>Books</h3>
+                <div id="resultCount" class="muted">0 results</div>
+            </div>
+            <div id="bookList" class="book-grid"></div>
+        </section>
+
+        <section id="adminOrders" class="card slide-up" data-visible="admin">
+            <h3>Order Requests</h3>
+            <div id="ordersList" class="orders-list"></div>
+        </section>
+
+        <section id="userRequests" class="card slide-up" data-visible="user">
+            <h3>My Requests</h3>
+            <div id="myRequestsList" class="orders-list"></div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-dialog card" role="document">
+            <button class="modal-close btn icon" aria-label="Close" data-close>✕</button>
+            <div class="modal-content">
+                <h3 id="modalTitle">Book Details</h3>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <span>Made with ❤ for reading</span>
+    </footer>
+
+    <script src="script.js" defer></script>
+    
+</body>
+</html>
+
