@@ -85,11 +85,8 @@ BookMatrixPro/
 
 ## 📸 Screenshot
 
+![Screenshot](screenshots/user-page.png)
 
-```markdown
-![Scrrenshot](screenshots/user-page.png)
-
-```
 
 ---
 
