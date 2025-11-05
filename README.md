@@ -85,7 +85,7 @@ BookMatrixPro/
 
 ## 📸 Screenshot
 
-![Screenshot](screenshots/user-page.png)
+![Screenshot](screenshots/Library_Management_System.png)
 
 
 ---
